@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp"
+    android:layout_marginTop="20dp"
+    android:paddingRight="16dp"
+    android:paddingLeft="8dp"
+    android:background="#FFFFFF"
+    >
+<RelativeLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txtstt"
+        android:gravity="center"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/orangecircle"
+        android:text="1"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#FFFFFF"
+        />
+    <Button
+        android:layout_marginRight="50dp"
+        android:id="@+id/btnback"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/back"
+        android:layout_alignParentRight="true"/>
+    <Button
+        android:id="@+id/btnnext"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/next"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imgavatar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:scaleType="centerInside"/>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/txtnoidung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="abide by"
+        android:textSize="22sp"
+        android:textColor="#0066CC"/>
+    <TextView
+        android:id="@+id/txtcachdoc"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/ə'baid/"
+        android:textSize="22sp"
+        android:textColor="#FF0000"/>
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giải thích: "
+                android:textColor="#000000"
+                android:textSize="17dp"/>
+            <TextView
+                android:id="@+id/txtgiaithich"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="to accept and act according to a law, an agreement"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Từ loại: "
+                android:textColor="#000000"
+                android:textSize="17dp"/>
+            <TextView
+                android:id="@+id/txttuloai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="(v): tôn trọng, tuân theo, giữ (lời)"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ví dụ: "
+                android:textColor="#000000"
+                android:textSize="17dp"/>
+            <TextView
+                android:id="@+id/txtvidu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="The two parties agreed to abide by the judge's decision"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txtviduvietsub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hai bên đã đồng ý tuân theo quyết định của tòa án. "
+            android:textColor="#000000"
+            android:textSize="17dp"/>
+    </LinearLayout>
+</LinearLayout>
