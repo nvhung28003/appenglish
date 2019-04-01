@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,21 +15,23 @@ import com.example.yuroko.appfood.entity.Information;
 import com.example.yuroko.appfood.R;
 import com.example.yuroko.appfood.itface.IGetHref;
 import com.example.yuroko.appfood.itface.KEY;
-import com.example.yuroko.appfood.jsoup.DataCrawler;
 import com.example.yuroko.appfood.view.adapter.InformationAdapter;
 import com.example.yuroko.appfood.jsoup.DataCrawlerOpen;
+import com.example.yuroko.appfood.view.fragment.OpeninformationFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class InformationActivity extends AppCompatActivity implements InformationAdapter.OnitemClickListener,View.OnClickListener {
-private RecyclerView rcvenglish;
-private InformationAdapter informationAdapter;
-private TextView txtpagetitle;
-private IGetHref iGetHref;
-private Button btnbackfirst;
+public class InformationActivity extends AppCompatActivity implements InformationAdapter.OnitemClickListener, View.OnClickListener {
+    private RecyclerView rcvenglish;
+    private InformationAdapter informationAdapter;
+    private TextView txtpagetitle;
+    private IGetHref iGetHref;
+    private Button btnbackfirst;
+//private ArrayList<Information> informations=new ArrayList<>();
 
     @Override
-    protected void onCreate( @Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initlizeComponents();
@@ -40,15 +41,17 @@ private Button btnbackfirst;
         informationAdapter.setOnitemClickListener(this);
         dataCrawlerOpen.crawleDataopen(new DataCrawlerOpen.OnResultCallBack() {
             @Override
-            public void onSuccess(final List<Information> informationList, final String pagetitle) {
+            public void onSuccess(final List<Information> informations, final String pagetitle) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        informationAdapter.setInformationList(informationList);
+                        OpeninformationActivity.informations = informations;
+                        informationAdapter.setInformationList(informations);
                         txtpagetitle.setText(pagetitle);
                     }
                 });
             }
+
             @Override
             public void onFailure(final Throwable throwable) {
                 runOnUiThread(new Runnable() {
@@ -64,14 +67,14 @@ private Button btnbackfirst;
     }
 
     private void initlizeComponents() {
-        rcvenglish  = findViewById(R.id.rcvenglish);
-        RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(this);
+        rcvenglish = findViewById(R.id.rcvenglish);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rcvenglish.setLayoutManager(layoutManager);
         informationAdapter = new InformationAdapter(this);
         rcvenglish.setAdapter(informationAdapter);
-        txtpagetitle= findViewById(R.id.txtpagetitle);
+        txtpagetitle = findViewById(R.id.txtpagetitle);
         txtpagetitle.setVisibility(View.VISIBLE);
-        btnbackfirst= findViewById(R.id.btnbackfirst);
+        btnbackfirst = findViewById(R.id.btnbackfirst);
         btnbackfirst.setVisibility(View.VISIBLE);
 
 
@@ -80,15 +83,8 @@ private Button btnbackfirst;
 
     @Override
     public void OnitemClicked(Information information) {
-        Intent intent=new Intent(this,OpeninformationActivity.class);
-        intent.putExtra(KEY.STT,information.getStt());
-        intent.putExtra(KEY.AVATAR,information.getAvatar());
-        intent.putExtra(KEY.NOIDUNG,information.getNoidung());
-        intent.putExtra(KEY.CACHDOC,information.getCachdoc());
-        intent.putExtra(KEY.GIAITHICH,information.getGiaithich());
-        intent.putExtra(KEY.TULOAI,information.getTuloai());
-        intent.putExtra(KEY.VIDU,information.getVidu());
-        intent.putExtra(KEY.VIDUVIETSUB,information.getViduvietsub());
+        Intent intent = new Intent(this, OpeninformationActivity.class);
+        intent.putExtra("POSITION", information.getStt());
 
         this.startActivity(intent);
 
@@ -96,13 +92,12 @@ private Button btnbackfirst;
 
     @Override
     public void onClick(View v) {
-        switch (v.getId())
-        {
-            case R.id.btnbackfirst :
+        switch (v.getId()) {
+            case R.id.btnbackfirst:
                 onBackPressed();
                 break;
-                default:
-                    break;
+            default:
+                break;
         }
     }
 }

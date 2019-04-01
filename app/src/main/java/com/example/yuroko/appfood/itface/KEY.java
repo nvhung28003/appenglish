@@ -10,5 +10,5 @@ public interface KEY {
     String TULOAI="TULOAI";
     String VIDU="VIDU";
     String VIDUVIETSUB="VIDUVIETSUB";
-
+    String MP3 = "MP3";
 }

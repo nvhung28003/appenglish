@@ -76,7 +76,7 @@ private DataCrawlerOpen dataCrawlerOpen;
         if (english!=null){
             href=english.getHref();
         }
-        Toast.makeText(this,href,Toast.LENGTH_SHORT).show();
+
         this.startActivity(intent);
     }
 

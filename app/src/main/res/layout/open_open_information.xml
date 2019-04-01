@@ -27,19 +27,7 @@
         android:textSize="15sp"
         android:textColor="#FFFFFF"
         />
-    <Button
-        android:layout_marginRight="50dp"
-        android:id="@+id/btnback"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/back"
-        android:layout_alignParentRight="true"/>
-    <Button
-        android:id="@+id/btnnext"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/next"
-        android:layout_alignParentRight="true"/>
+
 </RelativeLayout>
 
     <ImageView
@@ -137,5 +125,15 @@
             android:text="Hai bên đã đồng ý tuân theo quyết định của tòa án. "
             android:textColor="#000000"
             android:textSize="17dp"/>
+        <ImageView
+
+            android:background="?attr/selectableItemBackground"
+            android:id="@+id/mp3"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/play"/>
     </LinearLayout>
 </LinearLayout>

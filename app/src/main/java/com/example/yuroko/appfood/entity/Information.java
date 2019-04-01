@@ -10,8 +10,22 @@ public class Information {
     private String tuloai;
     private String vidu;
     private String viduvietsub;
+    private String mp3;
 
     public Information() {
+    }
+
+    public Information(String pagetitle, String stt, String avatar, String noidung, String cachdoc, String giaithich, String tuloai, String vidu, String viduvietsub, String mp3) {
+        this.pagetitle = pagetitle;
+        this.stt = stt;
+        this.avatar = avatar;
+        this.noidung = noidung;
+        this.cachdoc = cachdoc;
+        this.giaithich = giaithich;
+        this.tuloai = tuloai;
+        this.vidu = vidu;
+        this.viduvietsub = viduvietsub;
+        this.mp3 = mp3;
     }
 
     public Information(String pagetitle, String stt, String avatar, String noidung, String cachdoc, String giaithich, String tuloai, String vidu, String viduvietsub) {
@@ -96,5 +110,13 @@ public class Information {
 
     public void setViduvietsub(String viduvietsub) {
         this.viduvietsub = viduvietsub;
+    }
+
+    public String getMp3() {
+        return mp3;
+    }
+
+    public void setMp3(String mp3) {
+        this.mp3 = mp3;
     }
 }

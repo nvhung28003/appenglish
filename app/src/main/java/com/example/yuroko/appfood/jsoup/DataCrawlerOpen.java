@@ -52,7 +52,7 @@ public   String pagetitle;
 
         Elements items =document.select("div.tuvung");
 
-        List<Information> informationList =new ArrayList<>();
+        List<Information> informations =new ArrayList<>();
 
         for (Element item:items) {
             try {
@@ -80,16 +80,18 @@ public   String pagetitle;
                 String vidu = node3.toString();
 
                 String vietsub = item.selectFirst("b").text();
-                Log.d(TAG, "pagetitle: " + pagetitle);
-                Log.d(TAG, "stt:  + stt" + stt);
-                Log.d(TAG, "excute: img" + avatar);
-                Log.d(TAG, "excute:noi dung " + noidung);
-                informationList.add(new Information(pagetitle, stt, avatar, noidung, cachdoc, giaithich, tuloai, vidu, vietsub));
+                Elements amthanh = contents.select("source");
+
+                String origin = "https://600tuvungtoeic.com/";
+                String mp3 = origin+ amthanh.get(0).attr("src");
+
+                informations.add(new Information(pagetitle, stt, avatar, noidung, cachdoc, giaithich, tuloai, vidu, vietsub,mp3));
+                Log.d("AAA", mp3.toString());
             }
             catch (Exception e){}
 
         }
-        return informationList;
+        return informations;
     }
     public interface OnResultCallBack{
         void onSuccess(List<Information> informationList,String pagetitle);
