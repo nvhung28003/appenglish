@@ -11,11 +11,12 @@ public class Information {
     private String vidu;
     private String viduvietsub;
     private String mp3;
+    private String href;
 
     public Information() {
     }
 
-    public Information(String pagetitle, String stt, String avatar, String noidung, String cachdoc, String giaithich, String tuloai, String vidu, String viduvietsub, String mp3) {
+    public Information(String pagetitle, String stt, String avatar, String noidung, String cachdoc, String giaithich, String tuloai, String vidu, String viduvietsub, String mp3, String href) {
         this.pagetitle = pagetitle;
         this.stt = stt;
         this.avatar = avatar;
@@ -26,18 +27,7 @@ public class Information {
         this.vidu = vidu;
         this.viduvietsub = viduvietsub;
         this.mp3 = mp3;
-    }
-
-    public Information(String pagetitle, String stt, String avatar, String noidung, String cachdoc, String giaithich, String tuloai, String vidu, String viduvietsub) {
-        this.pagetitle = pagetitle;
-        this.stt = stt;
-        this.avatar = avatar;
-        this.noidung = noidung;
-        this.cachdoc = cachdoc;
-        this.giaithich = giaithich;
-        this.tuloai = tuloai;
-        this.vidu = vidu;
-        this.viduvietsub = viduvietsub;
+        this.href = href;
     }
 
     public String getPagetitle() {
@@ -118,5 +108,30 @@ public class Information {
 
     public void setMp3(String mp3) {
         this.mp3 = mp3;
+    }
+
+    public String getHref() {
+        return href;
+    }
+
+    public void setHref(String href) {
+        this.href = href;
+    }
+
+    @Override
+    public String toString() {
+        return "Information{" +
+                "pagetitle='" + pagetitle + '\'' +
+                ", stt='" + stt + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", noidung='" + noidung + '\'' +
+                ", cachdoc='" + cachdoc + '\'' +
+                ", giaithich='" + giaithich + '\'' +
+                ", tuloai='" + tuloai + '\'' +
+                ", vidu='" + vidu + '\'' +
+                ", viduvietsub='" + viduvietsub + '\'' +
+                ", mp3='" + mp3 + '\'' +
+                ", href='" + href + '\'' +
+                '}';
     }
 }

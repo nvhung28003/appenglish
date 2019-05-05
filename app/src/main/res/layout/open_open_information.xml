@@ -11,6 +11,7 @@
     android:paddingLeft="8dp"
     android:background="#FFFFFF"
     >
+
 <RelativeLayout
     android:orientation="horizontal"
     android:layout_width="match_parent"
@@ -31,14 +32,18 @@
 </RelativeLayout>
 
     <ImageView
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
         android:id="@+id/imgavatar"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:scaleType="centerInside"/>
 
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <LinearLayout
         android:orientation="vertical"
         android:layout_marginLeft="5dp"
@@ -136,4 +141,5 @@
             android:layout_height="wrap_content"
             android:src="@drawable/play"/>
     </LinearLayout>
+</ScrollView>
 </LinearLayout>

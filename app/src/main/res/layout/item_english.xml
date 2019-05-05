@@ -12,6 +12,7 @@
     android:layout_height="100dp"
     android:src="@mipmap/ic_launcher"/>
     <TextView
+        android:layout_gravity="center"
         android:id="@+id/txtTitle"
         android:layout_marginLeft="10sp"
         android:layout_width="wrap_content"

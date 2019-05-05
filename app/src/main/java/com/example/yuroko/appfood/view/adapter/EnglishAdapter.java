@@ -22,9 +22,9 @@ public class EnglishAdapter extends RecyclerView.Adapter<EnglishAdapter.ViewHode
     private List<English> englishes;
     private OnitemClickListener onitemClickListener;
 
-    public EnglishAdapter(Context context) {
+    public EnglishAdapter(Context context,List<English> englishes) {
         this.context = context;
-        englishes = new ArrayList<>();
+        this.englishes = englishes;
         inflater = LayoutInflater.from(context);
     }
 

@@ -20,10 +20,10 @@ public class InformationAdapter  extends  RecyclerView.Adapter<InformationAdapte
     private LayoutInflater inflater;
     private List<Information> informationList;
     private OnitemClickListener onitemClickListener;
-    public  InformationAdapter (Context context)
+    public  InformationAdapter (Context context,List<Information> informationList)
     {
         this.context = context;
-        informationList =new ArrayList<>();
+        this.informationList = informationList;
         inflater = LayoutInflater.from(context);
     }
     @NonNull

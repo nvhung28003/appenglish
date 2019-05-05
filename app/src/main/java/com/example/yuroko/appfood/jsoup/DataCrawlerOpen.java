@@ -3,6 +3,7 @@ package com.example.yuroko.appfood.jsoup;
 import android.util.Log;
 
 import com.example.yuroko.appfood.entity.Information;
+import com.example.yuroko.appfood.view.activity.InformationActivity;
 import com.example.yuroko.appfood.view.activity.MainActivity;
 
 
@@ -66,7 +67,7 @@ public   String pagetitle;
                 String cachdoc = item.select("span").get(1).text();
                 Elements contents = item.select("div.noidung");
 
-                Element dong1 = contents.select("span").get(2);
+                 Element dong1 = contents.select("span").get(2);
                 Node node1 = dong1.nextSibling();
                 String giaithich = node1.toString();
 
@@ -85,11 +86,15 @@ public   String pagetitle;
                 String origin = "https://600tuvungtoeic.com/";
                 String mp3 = origin+ amthanh.get(0).attr("src");
 
-                informations.add(new Information(pagetitle, stt, avatar, noidung, cachdoc, giaithich, tuloai, vidu, vietsub,mp3));
+                informations.add(new Information(pagetitle, stt, avatar, noidung, cachdoc, giaithich, tuloai, vidu, vietsub,mp3,MainActivity.href));
+                Information information =new Information(pagetitle,stt,avatar,noidung,cachdoc,giaithich,tuloai,vidu,vietsub,mp3,MainActivity.href);
+                if(information != null)
+                {
+                    MainActivity.dbDetail.adddetail(information);
+                }
                 Log.d("AAA", mp3.toString());
             }
             catch (Exception e){}
-
         }
         return informations;
     }
